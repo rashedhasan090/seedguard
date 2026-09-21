@@ -1,0 +1,125 @@
+"""Pattern tables for seed / RNG detection."""
+
+from __future__ import annotations
+
+SKIP_DIR_NAMES = {
+    ".git",
+    ".hg",
+    ".svn",
+    ".venv",
+    "venv",
+    "env",
+    ".tox",
+    ".mypy_cache",
+    ".pytest_cache",
+    ".ruff_cache",
+    "__pycache__",
+    "node_modules",
+    "dist",
+    "build",
+    ".eggs",
+    "site-packages",
+}
+
+SEED_ATTRS = {
+    "seed",
+    "manual_seed",
+    "set_seed",
+    "set_random_seed",
+    "cuda_manual_seed",
+    "cuda_manual_seed_all",
+}
+
+RNG_ATTRS = {
+    "random",
+    "randint",
+    "randrange",
+    "choice",
+    "choices",
+    "sample",
+    "shuffle",
+    "uniform",
+    "triangular",
+    "betavariate",
+    "expovariate",
+    "gammavariate",
+    "gauss",
+    "normalvariate",
+    "lognormvariate",
+    "vonmisesvariate",
+    "paretovariate",
+    "weibullvariate",
+    "getrandbits",
+    "randbytes",
+    "randn",
+    "rand",
+    "randperm",
+    "bernoulli",
+    "normal",
+    "poisson",
+    "multinomial",
+    "binomial",
+    "uniform_",
+    "normal_",
+    "permutation",
+    "shuffle_",
+    "dropout",
+    "rand_like",
+    "randn_like",
+    "randint_like",
+}
+
+RNG_ROOTS = {
+    "random",
+    "np",
+    "numpy",
+    "torch",
+    "tf",
+    "tensorflow",
+}
+
+SEED_QUALNAMES = {
+    "random.seed",
+    "np.random.seed",
+    "numpy.random.seed",
+    "np.random.default_rng",
+    "numpy.random.default_rng",
+    "torch.manual_seed",
+    "torch.cuda.manual_seed",
+    "torch.cuda.manual_seed_all",
+    "torch.use_deterministic_algorithms",
+    "tf.random.set_seed",
+    "tensorflow.random.set_seed",
+    "tf.set_random_seed",
+    "tensorflow.set_random_seed",
+}
+
+RNG_QUALNAME_PREFIXES = (
+    "random.",
+    "np.random.",
+    "numpy.random.",
+    "torch.rand",
+    "torch.randn",
+    "torch.randint",
+    "torch.randperm",
+    "torch.bernoulli",
+    "torch.normal",
+    "torch.multinomial",
+    "torch.poisson",
+    "tf.random.",
+    "tensorflow.random.",
+)
+
+SEED_OR_SETUP_ATTRS = SEED_ATTRS | {
+    "default_rng",
+    "Generator",
+    "RandomState",
+    "get_state",
+    "set_state",
+    "getstate",
+    "setstate",
+    "PCG64",
+    "MT19937",
+    "Philox",
+    "SFC64",
+}
